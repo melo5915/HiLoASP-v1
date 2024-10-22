@@ -1,6 +1,10 @@
-﻿// current file: hiloStart.html
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+    // current file: hiloStart.html
 // project name:
-// programmer name: Mohamad-Aref El-Osta && Dion Iso
+// programmer name: Mohamad-Aref El-Osta && Dionisio Estupin III
 // current version: v1 - 2024 - 10 - 22
 
 /*
@@ -8,28 +12,49 @@ functionality:
 this program is the HiLo game re visted using ASP server side prorgamming 
 
 */
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
+-->
     <meta charset="utf-8" />
     <title>ASP Hi-Lo Game</title> <!-- title -->
-    <script> 
-        // name: nameValidation
-        // functionality: handles validation for name input
-        // parameters: name input
-        // return: nothing
-        function nameValidation 
-
-
-
-
-
-    </script>
+   
 </head>
 <body>
+    <div id="namename"class="">   <!-- NAME INPUT --> 
+        <label for="name"> What is your name? </label> 
+        <input type = "text" id="PlayerName" name="name"> 
+        <p id="nameError" class="hidden"> Please enter a name</p> 
+    </div> 
+    <div>
+    <label for="guess">Enter your guess :</label> 
+    <input type="number" id="guess"\> 
+    <p id="guessError" class="hidden">Please enter a valid guess within the range.</p> 
+    <p id="OutOfRangeError" class="hidden">Guess is outside of the range.</p> 
+    </div>
+    <script>  
 
+        // name: nameValidation 
+        // functionality: handles validation for name input 
+        // parameters: name input 
+        // return: nothing 
+
+        function nameValidation(){ 
+          let name = document.getElementById("PlayerName").value.trim(); 
+            if(name == ""){ 
+                document.getElementById("nameError").classList.remove("hidden"); 
+            } 
+            else{ 
+                document.getElementById("nameError").classList.add("hidden"); 
+            }              
+        }  
+
+        function guessValidation(){ 
+            const guessInput = parseInt(document.getElementById("guess").value); 
+            document.getElementById("OutOfRangeError").classList.add("hidden"); 
+            document.getElementById("guessError").classList.add("hidden"); 
+            if(isNaN (guessInput)){ 
+                document.getElementById("guessError").classList.remove("hidden"); 
+            } 
+    } 
+    
+    </script> 
 </body>
 </html>
