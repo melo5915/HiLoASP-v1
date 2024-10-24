@@ -18,17 +18,22 @@ this program is the HiLo game re visted using ASP server side prorgamming
    
 </head>
 <body>
+    <form>
+    <h1>Hi-Lo Game</h1> <!-- title -->
     <div id="namename"class="">   <!-- NAME INPUT --> 
         <label for="name"> What is your name? </label> 
         <input type = "text" id="PlayerName" name="name"> 
         <p id="nameError" class="hidden"> Please enter a name</p> 
     </div> 
+
     <div>
     <label for="guess">Enter your guess :</label> 
     <input type="number" id="guess"\> 
     <p id="guessError" class="hidden">Please enter a valid guess within the range.</p> 
     <p id="OutOfRangeError" class="hidden">Guess is outside of the range.</p> 
     </div>
+
+    </form>
     <script>  
 
         // name: nameValidation 
@@ -53,6 +58,10 @@ this program is the HiLo game re visted using ASP server side prorgamming
             if(isNaN (guessInput)){ 
                 document.getElementById("guessError").classList.remove("hidden"); 
             } 
+            else 
+            {
+                document.getElementById("guessError").classList.add("hidden");
+            }
     } 
     
     </script> 
